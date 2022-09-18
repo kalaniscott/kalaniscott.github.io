@@ -1,3 +1,7 @@
 :root {
     --color-space: hsl(0, 0%, 85%);
 }
+
+body {
+    background-color: var(--color-space);
+}
