@@ -5,3 +5,15 @@
 body {
     background-color: var(--color-space);
 }
+
+/* Utilities */
+.pancake {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.pancake .box {
+    flex: 1 1 300px
+}
