@@ -1,5 +1,9 @@
 :root {
     --color-space: hsl(0, 0%, 85%);
+    --color-primary: #2B287A;
+    --color-primary-alt: #3C2570;
+    --color-primary-light: #435CB0;
+    --color-primary-dark: #263463; 
 }
 
 body {
@@ -16,4 +20,18 @@ body {
 
 .pancake .box {
     flex: 1 1 300px
+}
+
+/* Testing stuff */
+.test .box {
+    padding: 20px;
+}
+.test .box:nth-child(3n) {
+    background-color: var(--color-primary);
+}
+.test .box:nth-child(3n - 1) {
+    background-color: var(--color-primary-light);
+}
+.test .box:nth-child(3n - 2) {
+    background-color: var(--color-primary-dark);
 }
