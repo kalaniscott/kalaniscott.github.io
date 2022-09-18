@@ -21,17 +21,3 @@ body {
 .pancake .box {
     flex: 1 1 300px
 }
-
-/* Testing stuff */
-.test .box {
-    padding: 20px;
-}
-.test .box:nth-child(3n) {
-    background-color: var(--color-primary);
-}
-.test .box:nth-child(3n - 1) {
-    background-color: var(--color-primary-light);
-}
-.test .box:nth-child(3n - 2) {
-    background-color: var(--color-primary-dark);
-}
