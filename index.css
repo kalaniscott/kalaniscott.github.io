@@ -1,83 +1,130 @@
 :root {
-    --color-space: hsl(0, 0%, 85%);
-    --color-primary: #2b287b;
-    --color-primary-alt: #3c2570;
-    --color-primary-light: rgb(67, 92, 176);
-    --color-primary-dark: #263463;
+    --color-primary: hsl(214, 35%, 37%);
+    --color-primary-alt: hsl(214, 46%, 42%);
+    --color-primary-gradient: radial-gradient(circle, var(--color-primary) 0%, var(--color-primary-alt) 100%);
+    --color-secondary: rgb(239, 110, 78);
+    --color-secondary-alt: hsl(12, 62%, 60%);
+    --transparent-white: rgba(255, 255, 255, 0.3);
+    --transparent-black: rgba(0, 0, 0, 0.3)
 }
 
 body {
-    /* background: url(./media/pawel-czerwinski.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; */
-    background:
-        linear-gradient(to top right, rgba(0, 0, 0, 0.6), rgba(43, 40, 123, 0.6)),
-        linear-gradient(to right, rgba(43, 40, 123, 0.6), rgba(0, 0, 0, 0.6)),
-        linear-gradient(to left, #000, var(--color-primary)),
-        linear-gradient(to top, var(--color-primary-alt), var(--color-primary-dark))
-    ;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     margin: 0;
+    display: grid;
+    grid-template-areas:
+        'h m m m'
+        'a m m m'
+        'a m m m'
+        'a m m m';
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: minmax(150px, 1fr) 2fr;
+    font-family: 'Raleway';
+    font-size: 20px;
 }
 
 header {
-    background-color: #000;
-    padding: 50px 10px;
+    grid-area: h;
+    padding: 30px 15px;
+    background: var(--color-primary-gradient) fixed;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 main {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 50px;
-    padding: 50px 10px;
-}
-
-.blurb {
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(1.5px);
-    -webkit-backdrop-filter: blur(1.5px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 50px;
-}
-
-div.social-icons {
-    background-image: linear-gradient(90deg, #263463, var(--color-primary));
-    border-radius: 50px;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    width: fit-content;
-}
-
-div.social-icons a img {
-    transition: all ease-in-out 0.4s;
-}
-
-div.social-icons a:hover img {
-    transform: scale(1.1);
-}
-
-.blurb.languages {
+    grid-area: m;
     padding: 50px 30px;
+    display: flex;
+    flex-direction: column; 
+    align-items: stretch;
+    justify-content: space-evenly;
 }
 
-section.skills ul {
+aside {
+    background: var(--color-primary-gradient) fixed;
+    grid-area: a;
+    padding: 0 15px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+aside section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Libre Franklin';
+    letter-spacing: 1.5px;
+}
+
+h1 {
+    font-size: 60px !important;
+    max-width: 10ch;
+}
+
+h2 {
+    font-size: 28px;
+    letter-spacing: 1.5px;
+}
+
+h3 {
+    background-color: var(--transparent-black);
+    padding: 10px;
+    font-size: 26px;
+}
+
+aside h4 {
+    font-size: 24px;
+}
+
+ul {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     row-gap: 20px;
 }
 
-section.skills li {
+li {
     display: grid;
     grid-template-columns: 50px 1fr;
     align-items: center;
     justify-content: center;
     gap: 20px;
+}
+
+div.social-icons {
+    border-radius: 50px;
+    padding: 30px 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+div.social-icons a {
+    flex: 1 1 50px;
+    display: grid;
+    place-items: center;
+}
+
+div.social-icons a img {
+    transition: all ease-in-out 0.4s;
+    min-height: 50px;
+}
+
+div.social-icons a:hover img {
+    transform: scale(1.1);
 }
 
 ul.skill-bars {
@@ -92,55 +139,80 @@ ul.skill-bars {
 
 .skill-bars li {
     display: grid;
-    grid-template-columns: 90px 1fr;
+    grid-template-columns: 55px 1fr;
     align-items: center;
     justify-content: center;
 }
 
 
 .skill-bars div.bar-wrap {
-    height: 20px;
-    border-radius: 20px;
+    height: 30px;
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);
     box-sizing: border-box;
     padding: 5px;
+    background-color: var(--transparent-black);
 }
 
 .skill-bars li div.bar {
-    border-radius: 50px;
-}
-
-li.basic div.bar {
-    background-image: linear-gradient(90deg, rgba(67, 92, 176, 1), rgba(67, 92, 176, 0.3));
+    background-color: #fff;
 }
 
 li.medium div.bar {
-    background-image: linear-gradient(90deg, rgba(67, 92, 176, 1), rgba(67, 92, 176, 0.3));
     grid-column: span 2;
 }
 
 li.intermediate div.bar {
-    background-image: linear-gradient(90deg, rgba(43, 40, 123, 1), rgba(43, 40, 123, 0.3));
     grid-column: span 3;
 }
 
 li.high div.bar {
-    background-image: linear-gradient(90deg, rgb(38, 52, 99, 1), rgba(38, 52, 99, 0.3));
     grid-column: span 4;
 }
 
 li.advanced div.bar {
-    background-image: linear-gradient(90deg, rgba(60, 37, 112, 1), rgba(60, 37, 112, 0.3));
     grid-column: span 5;
 }
 
 .skill-bars li img {
     margin: 0 auto;
+    max-width: 50px;
+    max-height: 50px;
 }
 
+.skill-bars p {
+    font-family: 'Libre Franklin';
+    font-size: 0.8em;
+}
+
+.personal-info>div:not(:last-child) {
+    padding-inline-start: 10%;
+}
+
+.personal-info>div:not(:last-child) p {
+    padding-inline-start: 10%;
+}
+
+.work-exp,
+.education {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+}
+
+.work-exp > div, .education > div {
+    margin: 30px 0;
+}
+
+.work-exp div > *, .education div:nth-child(2n) > * {
+    margin: 10px !important;
+}
+
+dl#papers, dl#thesis {
+    font-size: 0.65em;
+    padding: 0;
+}
 
 /* Utilities */
 .pancake {
