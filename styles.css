@@ -2,6 +2,7 @@
     --color-red: hsl(10, 100%, 45%);
     --font-title: 'EB Garamond', serif;
 }
+
 body {
     background: #000;
     padding: 0;
@@ -36,4 +37,22 @@ header hr {
     color: var(--color-red);
     background-color: var(--color-red);
     border: 10px solid var(--color-red);
+}
+
+
+
+@media (prefers-reduced-motion:no-preference) {
+    [letter-animation=hover]:hover>span {
+        transform: scale(.75) perspective(1px)
+    }
+
+    [letter-animation=hover]>span {
+        transition: transform .3s ease;
+        cursor: pointer;
+        will-change: transform
+    }
+
+    [letter-animation=hover]>span:hover {
+        transform: scale(1.25) perspective(1px)
+    }
 }
