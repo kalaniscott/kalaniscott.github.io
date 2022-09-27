@@ -1,6 +1,6 @@
 :root {
-    --color-red: hsl(10, 100%, 45%);
-    --font-title: 'EB Garamond', serif;
+    --color-red: #BFB49F;
+    --font-title: 'Bodoni Moda', serif;
 }
 
 body {
@@ -8,12 +8,15 @@ body {
     padding: 0;
     margin: 0;
     display: grid;
+    color: #fff;
+    font-family: 'Playfair Display', sans-serif;
 }
 
 header {
     box-sizing: border-box;
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    min-width: 100vw;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,24 +25,110 @@ header {
 }
 
 h1 {
-    font-size: clamp(6rem, 6rem + 1vw, 12rem);
-    color: var(--color-red);
+    font-size: clamp(2rem, 2rem + 6vw, 12rem);
     font-family: var(--font-title);
-    font-weight: 800;
+    background: -webkit-linear-gradient(90deg, #fff, #8C857D, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 22px;
     text-align: center;
     margin: 0 auto;
-    line-height: 1.7;
+    line-height: 2;
+    max-width: 100%;
 }
 
 header hr {
     color: var(--color-red);
     background-color: var(--color-red);
-    border: 10px solid var(--color-red);
+    border: none;
+    border-top: 1px solid var(--color-red);
+    width: 30%;
 }
 
+main>section {
+    min-height: 80vh;
+    padding: 10%;
+    display: grid;
+    place-items: center;
+}
 
+main h3 {
+    font-size: clamp(2rem, 2rem + 0.8vw, 3rem);
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.pancake {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.pancake .box p {
+    /* color: #000; */
+    text-align: center;
+}
+
+.dummy .box {
+    flex: 1 1 50px;
+    min-height: 150px;
+    min-width: 150px;
+    display: grid;
+    place-items: center;
+}
+
+.dummy .delay-200 {
+    transition-delay: 200ms;
+}
+
+.dummy .delay-400 {
+    transition-delay: 400ms;
+}
+
+.dummy .delay-600 {
+    transition-delay: 600ms;
+}
+
+.dummy .delay-800 {
+    transition-delay: 800ms;
+}
+
+.dummy .box:nth-child(2n) {
+    background-color: #8C857D;
+    color: #0C0D0C;
+}
+
+.dummy .box:nth-child(2n + 1) {
+    background-color: #0C0D0C;
+    color: #fff;
+}
+
+.blurb {
+    font-size: 4rem;
+    max-width: 20ch;
+    font-weight: 200;
+}
+
+main section p a {
+    color: #fff;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .show {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+}
 
 @media (prefers-reduced-motion:no-preference) {
     [letter-animation=hover]:hover>span {
