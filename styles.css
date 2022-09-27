@@ -122,6 +122,15 @@ main section p a {
     color: #fff;
 }
 
+@media screen and (max-width: 420px) {
+    h1 {
+        font-size: clamp(2rem, 2rem + 2vw, 3rem);
+    }
+    .blurb {
+        font-size: 2.2rem;
+    }
+}
+
 @media (prefers-reduced-motion: no-preference) {
     .show {
         opacity: 1;
