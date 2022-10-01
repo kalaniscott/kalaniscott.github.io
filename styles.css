@@ -1,6 +1,8 @@
 :root {
     --color-red: #BFB49F;
     --font-title: 'Bodoni Moda', serif;
+    --font-text: 'Playfair Display', serif;
+    --font-text2: 'Open Sans', sans-serif;
 }
 
 body {
@@ -9,7 +11,7 @@ body {
     margin: 0;
     display: grid;
     color: #fff;
-    font-family: 'Playfair Display', sans-serif;
+    font-family: var(--font-text)
 }
 
 header {
@@ -115,6 +117,12 @@ main section p a {
     color: #fff;
 }
 
+.sub-h {
+    font-family: var(--font-text2);
+    margin-top: 0;
+    font-size: 0.9em;
+}
+
 @media screen and (max-width: 420px) {
     h1 {
         font-size: clamp(2rem, 2rem + 2vw, 3rem);
@@ -130,7 +138,7 @@ main section p a {
         opacity: 0;
         filter: blur(5px);
         transform: translateX(-100%);
-        transition: all 1s;
+        transition: opacity 1s, filter 1s, transform 1s;
     }
 
     .show {
