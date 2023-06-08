@@ -10,13 +10,90 @@
       content="Web designer with a degree in Agronomy currently building a web development career."
     />
     <style>
-      .summary dl {
-        display: flex;
-        flex-flow: row wrap;
+      :root {
+        font-size: 16px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       }
-
-      .summary dt {
-        flex: 1 1 100%;
+      body {
+        display: grid;
+        gap: 1vh 2vw;
+        padding: 1vh 1vw;
+      }
+      body > * {
+        border: 1px solid #eeefff80;
+      }
+      main,
+      aside {
+        order: 2;
+      }
+      @media (min-width: 600px) {
+        body {
+          grid-template-columns: minmax(min-content, 1fr) 3fr;
+          grid-auto-flow: row dense;
+        }
+        main,
+        header {
+          grid-column: 2;
+        }
+      }
+      .flex-row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .flex-row > * {
+        flex: 1;
+      }
+      header .summary {
+        column-count: 2;
+      }
+      h1 {
+        margin-block: 0;
+        font: 400 3em/1.1 sans-serif;
+        text-transform: uppercase;
+      }
+      header h2,
+      li p {
+        margin-block-start: 0;
+        color: #3c3c3c;
+        font: bold 0.65em/1.2 sans-serif;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+      header .summary {
+        margin-block: 2em 0;
+      }
+      header hr {
+        background: #000;
+      }
+      .summary > *:first-child {
+        margin-block-start: 0;
+      }
+      .summary li {
+        margin-block: 0.05em 0.1em;
+      }
+      aside li label, footer address span {
+        display: block;
+        font-style: normal;
+      }
+      footer {
+        display: grid;
+        align-content: end;
+        grid-auto-rows: min-content;
+      }
+      footer ul {
+        margin-block-end: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .sr-only {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
       }
     </style>
   </head>
@@ -24,21 +101,23 @@
   <body>
     <header>
       <h1>Kalani Earl Scott Moraga</h1>
-      <h2>Web Designer</h2>
+      <h2>Agronomist, Web Designer & Developer</h2>
+      <hr />
       <div class="summary">
         <p>
           Versitile web designer with a degree in agronomy, able to bring a
           diverse skillset and fresh perspective to web development. Equipped
-          with stron academic foundations, I've built a second career into tech.
+          with an academic background, I have built strong foundations and a new
+          career into tech.
         </p>
         <p>
-          From IT support to web design, I have become proficient with web
-          technologies. Looking for ward to engineer innovative solutions,
-          explore new ideas and expand my knowledge.
+          From IT support to web design, I have become proficient with operating
+          sytems, networking and web technologies. Currently working on web design skills through freelance and learning to build a static website with NextJS + React deployed with Firebase. 
         </p>
         <ul>
+          Accesible and SEO driven 
           <li>
-            Proficient frontend skills
+            Frontend skills
             <ul>
               <li>
                 <strong>HTML</strong> structure compliant with
@@ -52,32 +131,15 @@
                     <abbr title="Document Object Model">DOM</abbr> manipulation
                   </li>
                   <li>Event handling</li>
-                  <li>Send and receive data</li>
+                  <li>Fetch API / Ajax</li>
                 </ul>
               </li>
+              <li>Web frameworks: React + NextJS</li>
             </ul>
           </li>
           <li>
-            Design thinking
-            <ul>
-              <li>Research and emphatize user's needs</li>
-              <li>Define problem statements</li>
-              <li>Effective ideation</li>
-            </ul>
-          </li>
-          <li>
-            <dl>
-              <dt>Efficient design principles</dt>
-              <dd>Repetition</dd>
-              <dd>Contrast</dd>
-              <dd>Focal Point</dd>
-              <dd>Hierarchy</dd>
-              <dd>Space</dd>
-              <dd>Grouping</dd>
-              <dd>Scale</dd>
-              <dd>Sequence</dd>
-              <dd>Balance</dd>
-            </dl>
+            Well rounded knowledge and skills to tackle design problems taking
+            careful consideration to the intended message or goal
           </li>
         </ul>
       </div>
@@ -237,19 +299,23 @@
       <ul>
         <li>
           <label for="skill-html">HTML</label>
-          <progress id="skill-html" max="100" value="85">85%</progress>
+          <progress id="skill-html" max="100" value="95">95%</progress>
         </li>
         <li>
           <label for="skill-css">CSS</label>
-          <progress id="skill-css" max="100" value="85">85%</progress>
+          <progress id="skill-css" max="100" value="95">95%</progress>
         </li>
         <li>
           <label for="skill-js">Javascript</label>
-          <progress id="skill-js" max="100" value="85">75%</progress>
+          <progress id="skill-js" max="100" value="75">75%</progress>
         </li>
         <li>
           <label for="skill-react">React</label>
           <progress id="skill-react" max="100" value="45">45%</progress>
+        </li>
+        <li>
+          <label for="skill-nextjs">NextJS</label>
+          <progress id="skill-nextjs" max="100" value="55">35%</progress>
         </li>
         <li>
           <label for="skill-python">Python</label>
@@ -257,18 +323,18 @@
         </li>
         <li>
           <label for="skill-django">Django</label>
-          <progress id="skill-django" max="100" value="55">55%</progress>
+          <progress id="skill-django" max="100" value="55">35%</progress>
         </li>
       </ul>
       <h2>Design Technologies</h2>
       <ul>
         <li>
           <label for="skill-figma">Figma</label>
-          <progress id="skill-figma" max="100" value="50">50%</progress>
+          <progress id="skill-figma" max="100" value="65">65%</progress>
         </li>
         <li>
           <label for="skill-photoshop">Photoshop</label>
-          <progress id="skill-photoshop" max="100" value="50">50%</progress>
+          <progress id="skill-photoshop" max="100" value="40">40%</progress>
         </li>
       </ul>
       <h2>Languages</h2>
@@ -284,14 +350,14 @@
       </ul>
     </aside>
     <footer>
-      <h2>Contact Information</h2>
-      <h3>Location</h3>
+      <h2 class="sr-only">Contact Information</h2>
+      <h3 class="sr-only">Location</h3>
       <address>
-        <p>Residenical Villa Flores</p>
-        <p>San Joaquin, Flores</p>
-        <p>Heredia 40801, Costa Rica</p>
+        <span>Residenical Villa Flores</span>
+        <span>San Joaquin, Flores</span>
+        <span>Heredia 40801, Costa Rica</span>
       </address>
-      <h3>Contact Details</h3>
+      <h3 class="sr-only">Contact Details</h3>
       <ul>
         <li>
           <a href="tel:+50687029993">+506 8702-9993</a>
@@ -300,7 +366,7 @@
           <a href="mailto:kalaniscott@gmail.com">kalaniscott@gmail.com</a>
         </li>
       </ul>
-      <h4>Web Profiles</h4>
+      <h4 class="sr-only">Web Profiles</h4>
       <ul>
         <li>
           <a href="https://www.linkedin.com/in/kalani-scott-moraga/"
