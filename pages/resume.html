@@ -12,7 +12,9 @@
     <style>
       :root {
         font-size: 16px;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
       }
       body {
         display: grid;
@@ -71,7 +73,11 @@
       .summary li {
         margin-block: 0.05em 0.1em;
       }
-      aside li label, footer address span {
+      .summary > * {
+        flex: 1 1 280px;
+      }
+      aside li label,
+      footer address span {
         display: block;
         font-style: normal;
       }
@@ -84,6 +90,21 @@
         margin-block-end: 0;
         padding: 0;
         list-style: none;
+      }
+
+      .social-icons {
+        gap: 2em;
+        align-items: center;
+      }
+
+      .social-icons li {
+        flex: 0;
+      }
+
+      .social-icons li a img {
+        filter: invert(1);
+        height: 20px;
+        max-width: 50px;
       }
       .sr-only {
         border: 0;
@@ -103,44 +124,40 @@
       <h1>Kalani Earl Scott Moraga</h1>
       <h2>Agronomist, Web Designer & Developer</h2>
       <hr />
-      <div class="summary">
-        <p>
-          Versitile web designer with a degree in agronomy, able to bring a
-          diverse skillset and fresh perspective to web development. Equipped
-          with an academic background, I have built strong foundations and a new
-          career into tech.
-        </p>
-        <p>
-          From IT support to web design, I have become proficient with operating
-          sytems, networking and web technologies. Currently working on web design skills through freelance and learning to build a static website with NextJS + React deployed with Firebase. 
-        </p>
+      <div class="summary flex-row">
+        <div>
+          <p>
+            Versitile web designer with a degree in agronomy, able to bring a
+            diverse skillset and fresh perspective to web development. Through my academic discipline, problem solving skills and enthuiasm, I have built strong foundations into web development and design.
+          </p>
+          <p>
+            From IT support to web design, gained proficiency with IT troubleshooting, operating sytems, networking, web technologies and UX/UI design. Currently working
+            on sharpening my web design services through freelance and learning to build a
+            static site with NextJS + React deployed with Firebase.
+          </p><p>Looking to take my development skills to the next level and engineer solutions for large scale systems.</p>
+        </div>
         <ul>
-          Accesible and SEO driven 
+          <li>Experience with website redesigns projects</li>
           <li>
-            Frontend skills
+            Translate designs to responsive components with <strong>CSS</strong> and
+            <strong>HTML</strong> compliant with
+            <abbr title="Web Content Accessibility Guidelines">WCAG</abbr>
+          </li>
+          <li>
+            Interactive user interfaces with <strong>Javascript</strong>
             <ul>
               <li>
-                <strong>HTML</strong> structure compliant with
-                <abbr title="Web Content Accessibility Guidelines">WCAG</abbr>
+                <abbr title="Document Object Model">DOM</abbr> manipulation
               </li>
-              <li>Responsive design with <strong>CSS</strong></li>
-              <li>
-                Interactive user interfaces with <strong>Javascript</strong>
-                <ul>
-                  <li>
-                    <abbr title="Document Object Model">DOM</abbr> manipulation
-                  </li>
-                  <li>Event handling</li>
-                  <li>Fetch API / Ajax</li>
-                </ul>
-              </li>
-              <li>Web frameworks: React + NextJS</li>
+              <li>Event handling</li>
+              <li>Fetch API / Ajax</li>
+              <li>Asyschronous programming</li>
             </ul>
           </li>
-          <li>
-            Well rounded knowledge and skills to tackle design problems taking
-            careful consideration to the intended message or goal
-          </li>
+          <li>Wireframing and prototyping with Figma</li>
+          <li>Create a content strategy and information architecture</li>
+
+          <li>SQL basics and document databases</li>
         </ul>
       </div>
     </header>
@@ -295,7 +312,7 @@
       </article>
     </main>
     <aside>
-      <h2>Web Technologies</h2>
+      <h2 class="sr-only">Web Technologies</h2>
       <ul>
         <li>
           <label for="skill-html">HTML</label>
@@ -310,12 +327,16 @@
           <progress id="skill-js" max="100" value="75">75%</progress>
         </li>
         <li>
+          <label for="skill-js">SQL</label>
+          <progress id="skill-js" max="100" value="60">60%</progress>
+        </li>
+        <li>
           <label for="skill-react">React</label>
           <progress id="skill-react" max="100" value="45">45%</progress>
         </li>
         <li>
           <label for="skill-nextjs">NextJS</label>
-          <progress id="skill-nextjs" max="100" value="55">35%</progress>
+          <progress id="skill-nextjs" max="100" value="35">35%</progress>
         </li>
         <li>
           <label for="skill-python">Python</label>
@@ -323,10 +344,10 @@
         </li>
         <li>
           <label for="skill-django">Django</label>
-          <progress id="skill-django" max="100" value="55">35%</progress>
+          <progress id="skill-django" max="100" value="35">35%</progress>
         </li>
       </ul>
-      <h2>Design Technologies</h2>
+      <h2 class="sr-only">Design Technologies</h2>
       <ul>
         <li>
           <label for="skill-figma">Figma</label>
@@ -337,7 +358,7 @@
           <progress id="skill-photoshop" max="100" value="40">40%</progress>
         </li>
       </ul>
-      <h2>Languages</h2>
+      <h2 class="">Languages</h2>
       <ul>
         <li>
           <label for="skill-spanish">Spanish</label>
@@ -367,20 +388,20 @@
         </li>
       </ul>
       <h4 class="sr-only">Web Profiles</h4>
-      <ul>
+      <ul class="social-icons flex-row">
         <li>
           <a href="https://www.linkedin.com/in/kalani-scott-moraga/"
-            ><img src="./media/icon/logo-linkedin.svg" alt="LinkedIn"
+            ><img src="../media/icon/logo-linkedin.svg" alt="LinkedIn"
           /></a>
         </li>
         <li>
           <a href="https://github.com/kalaniscott"
-            ><img src="./media/icon/logo-github.svg" alt="Github"
+            ><img src="../media/icon/logo-github.svg" alt="Github"
           /></a>
         </li>
         <li>
           <a href="https://kalaniscott.github.io/"
-            ><img src="./media/icon/web.svg" alt="website"
+            ><img src="../media/icon/web.svg" alt="website"
           /></a>
         </li>
       </ul>
